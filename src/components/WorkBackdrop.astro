@@ -1,0 +1,18 @@
+<div class="work-atmosphere" aria-hidden="true">
+  <div class="work-light-pool pool-one"></div>
+  <div class="work-light-pool pool-two"></div>
+  <div class="work-light-pool pool-three"></div>
+  <svg class="depth-contours" viewBox="0 0 1200 2400" preserveAspectRatio="none" fill="none">
+    <g class="contour-bank bank-left">
+      {Array.from({length: 14}, (_, i) => <path d={`M -160 ${170+i*22} C ${140+i*21} ${20+i*17}, ${720-i*14} ${320+i*23}, ${420-i*7} ${610+i*20} S ${-130+i*20} ${960+i*24}, ${250+i*12} ${1210+i*20}`} />)}
+    </g>
+    <g class="contour-bank bank-right">
+      {Array.from({length: 14}, (_, i) => <path d={`M 1390 ${900+i*22} C ${1030-i*16} ${760+i*18}, ${640+i*10} ${1130+i*17}, ${860+i*12} ${1420+i*20} S ${1450-i*15} ${1850+i*19}, ${850-i*10} ${2170+i*14}`} />)}
+    </g>
+  </svg>
+  <div class="work-caustics"></div>
+  <div class="marine-snow">
+    {Array.from({length:36},(_,i) => <i style={`--snow-x:${(i*37+11)%100}%;--snow-y:${(i*19+7)%100}%;--snow-size:${i%4===0?3:2}px;--snow-time:${14+i%11}s;--snow-delay:-${i*1.9}s`}></i>)}
+  </div>
+  <div class="depth-markers"><span>01 / SUNLIT WATERS</span><span>02 / INTO THE BLUE</span><span>03 / DEEPER CURRENTS</span><span>04 / NEW DISCOVERIES</span></div>
+</div>

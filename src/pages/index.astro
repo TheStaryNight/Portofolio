@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import '../styles/descent.css';
 import ProjectMotion from '../components/ProjectMotion.astro';
+import WorkBackdrop from '../components/WorkBackdrop.astro';
 import { projects } from '../data/projects';
 ---
 <!doctype html>
@@ -48,6 +49,7 @@ import { projects } from '../data/projects';
         <div class="hero-signature"><img src="/images/signature.png" width="640" height="300" alt="Steven Changcherta’s signature" /><span>A PERSONAL EXPLORATION</span></div><div class="hero-bottom"><button class="motion-toggle" type="button" aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span></button><span class="hero-bottom-center">AI / VISION / HUMAN EXPERIENCE</span><a href="#work">SCROLL TO EXPLORE <span>↓</span></a></div>
       </section>
       <section id="work" class="work section-wrap" aria-labelledby="work-title">
+        <WorkBackdrop />
         <div class="section-heading"><p class="eyebrow"><span>01 /</span> SELECTED WORK</p><span class="section-note">A FEW THINGS I’VE BUILT · 2024—2026</span></div>
         <div class="section-intro work-intro"><h2 id="work-title">Curiosity,<br/>put into <em>practice.</em></h2><p>From recognizing ripeness to rethinking how we interact with a computer. Four projects, each a new way to learn by building.</p></div>
         <div class="work-depth-line" aria-hidden="true"><span>ENTERING THE EXPLORATION ZONE</span><span>01 — 04 / SELECTED EXPERIMENTS</span></div><div class="projects">
