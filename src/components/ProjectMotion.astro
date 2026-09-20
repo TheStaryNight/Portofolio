@@ -1,0 +1,10 @@
+---
+interface Props { id: string; }
+const { id } = Astro.props;
+---
+<span class={`project-motif motif-${id}`} aria-hidden="true">
+  {id === 'fruit' && <><span class="scan-corners"></span><span class="scan-line"></span><span class="motif-label">VISION / CLASSIFY</span></>}
+  {id === 'gesture' && <><svg viewBox="0 0 150 150" fill="none"><path class="hand-trace" d="M75 132 39 92 23 74 18 60 29 55 52 74 43 38 41 17 52 14 59 37 66 70 67 20 69 5 80 6 81 23 80 67 89 29 96 17 105 22 102 37 94 77 111 49 123 40 130 49 120 67 108 101 89 131Z"/><path class="hand-bones" d="M75 132 52 74 23 60M75 132 66 70 49 20M75 132 80 67 74 12M75 132 94 77 100 24M75 132 108 101 124 47M52 74 66 70 80 67 94 77 108 101"/>{[[75,132],[52,74],[66,70],[80,67],[94,77],[108,101],[23,60],[49,20],[74,12],[100,24],[124,47]].map(([cx,cy],i) => <circle cx={cx} cy={cy} r="2.8" style={`--node-delay:${i * .2}s`}/>)}</svg><span class="motif-label">LANDMARKS / TRACK</span></>}
+  {id === 'catatstock' && <><span class="chart-motif"><span class="chart-ring"></span><span class="chart-bars">{[45,70,55,90,65,100].map((height,i) => <i style={`--bar-height:${height}%;--bar-delay:${i * .15}s`}></i>)}</span></span><span class="motif-label">PATTERNS / PREDICT</span></>}
+  {id === 'playnest' && <><span class="play-motif"><i></i><i></i><i></i><i></i></span><span class="motif-label">CURIOSITY / PLAY</span></>}
+</span>

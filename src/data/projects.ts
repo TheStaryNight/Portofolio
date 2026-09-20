@@ -1,6 +1,6 @@
 export const projects = [
   {
-    id: 'fruit', number: '01', title: 'Seeing beyond\nthe surface.', name: 'Fruit Ripeness Classification', category: 'COMPUTER VISION', date: 'SEP — DEC 2025',
+    id: 'fruit', metric: '99.4%', metricLabel: 'Reported accuracy', metricNote: 'Project dataset evaluation', number: '01', title: 'Seeing beyond\nthe surface.', name: 'Fruit Ripeness Classification', category: 'COMPUTER VISION', date: 'SEP — DEC 2025',
     description: 'From a single photo to a clearer decision. A deep learning application that identifies unripe, ripe, and rotten fruit, with an interactive interface to explore its predictions.',
     role: 'AI Engineer · Team Lead', tags: ['Python', 'PyTorch', 'ResNet18', 'Streamlit'], image: 'fruit-classification.png', alt: 'Fruit classifier training charts and Streamlit application predicting a ripe orange',
     link: 'https://github.com/TheStaryNight/Fruit_Clasification', linkLabel: 'Explore repository',
@@ -10,7 +10,7 @@ export const projects = [
     gallery: ['fruit-classification.png'],
   },
   {
-    id: 'gesture', number: '02', title: 'A gesture.\nA new interaction.', name: 'Gesture Controlled Mouse', category: 'REAL-TIME MACHINE LEARNING', date: 'FEB — JUN 2026',
+    id: 'gesture', metric: '~30 FPS', metricLabel: 'Real-time interaction', metricNote: 'Reported in the project setup', number: '02', title: 'A gesture.\nA new interaction.', name: 'Gesture Controlled Mouse', category: 'REAL-TIME MACHINE LEARNING', date: 'FEB — JUN 2026',
     description: 'An everyday interaction, reimagined. A webcam-based application that translates hand gestures into cursor movement, clicks, and scrolling.',
     role: 'AI Engineer · Project Lead', tags: ['Python', 'MediaPipe', 'scikit-learn', 'Streamlit'], image: 'gesture-hand-landmarks.png', alt: 'Twenty-one tracked hand landmarks connected over a webcam image',
     link: 'https://github.com/TheStaryNight/gesture-controlled-mouse', linkLabel: 'Explore repository',
@@ -20,7 +20,7 @@ export const projects = [
     gallery: ['gesture-0.png', 'gesture-1.png', 'gesture-2.png', 'gesture-3.png'],
   },
   {
-    id: 'catatstock', number: '03', title: 'Less guesswork.\nBetter stock.', name: 'CatatStock', category: 'PRODUCT DESIGN & DEVELOPMENT', date: 'FEB — JUN 2026',
+    id: 'catatstock', metric: '5 people', metricLabel: 'One shared product', metricNote: 'UI/UX and frontend contribution', number: '03', title: 'Less guesswork.\nBetter stock.', name: 'CatatStock', category: 'PRODUCT DESIGN & DEVELOPMENT', date: 'FEB — JUN 2026',
     description: 'A clearer view of a small business. An inventory dashboard bringing products, stock movements, cash flow, and AI-powered demand predictions into one place.',
     role: 'UI/UX Designer · Frontend Engineer', tags: ['React', 'CSS', 'Chart.js', 'Figma'], image: 'catatstock-dashboard-dark.png', alt: 'CatatStock dark dashboard with sales distribution and top-selling products',
     link: 'https://github.com/ercenttannius123/CatatStock', linkLabel: 'Explore repository',
@@ -30,7 +30,7 @@ export const projects = [
     gallery: ['catatstock-dashboard-light.png', 'catatstock-predictions.png', 'catatstock-input.png'],
   },
   {
-    id: 'playnest', number: '04', title: 'Small moments.\nBig discoveries.', name: 'PlayNest', category: 'USER RESEARCH & UI/UX', date: '2024',
+    id: 'playnest', metric: 'Play first.', metricLabel: 'Research-led design', metricNote: 'A concept built around family needs', number: '04', title: 'Small moments.\nBig discoveries.', name: 'PlayNest', category: 'USER RESEARCH & UI/UX', date: '2024',
     description: 'Making room for play beyond the screen. A child-focused app concept connecting families with offline activities, courses, and playful learning experiences.',
     role: 'UI/UX Designer · Data Collector', tags: ['Figma', 'User research', 'Prototyping'], image: 'playnest.png', alt: 'PlayNest colorful mobile app screens and phone mockup',
     link: 'https://www.figma.com/design/hVZpalCozawwvHuTKiBlHb/PlayNest', linkLabel: 'View Figma design',

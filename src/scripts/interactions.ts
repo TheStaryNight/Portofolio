@@ -63,10 +63,22 @@ document.querySelectorAll<HTMLButtonElement>('[data-project]').forEach(button =>
 });
 
 const progress = document.querySelector<HTMLElement>('.reading-progress')!;
+const depthLinks = document.querySelectorAll<HTMLAnchorElement>('[data-depth]');
+const depthReadout = document.querySelector<HTMLElement>('.depth-readout');
+const depthSections = ['surface', 'work', 'about', 'contact'].map(id => document.getElementById(id)!);
 let scrollFrame = 0;
 const updateProgress = () => {
   const length = document.documentElement.scrollHeight - innerHeight;
-  progress.style.transform = `scaleX(${length > 0 ? Math.min(1, scrollY / length) : 0})`;
+  const descent = length > 0 ? Math.min(1, scrollY / length) : 0;
+  progress.style.transform = `scaleX(${descent})`;
+  document.documentElement.style.setProperty('--descent', String(descent));
+  if (depthReadout) depthReadout.textContent = `${String(Math.round(descent * 100)).padStart(3, '0')}% / DESCENT`;
+  let current = 'surface';
+  depthSections.forEach(section => { if (section.getBoundingClientRect().top < innerHeight * .45) current = section.id; });
+  depthLinks.forEach(link => {
+    if (link.dataset.depth === current) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
   document.body.classList.toggle('has-scrolled', scrollY > 70);
   scrollFrame = 0;
 };
