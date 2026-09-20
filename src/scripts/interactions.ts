@@ -47,7 +47,20 @@ const reveal = new IntersectionObserver(entries => {
   });
 }, { threshold: 0, rootMargin: '0px 0px -70px 0px' });
 cards.forEach(card => reveal.observe(card));
+const workIntro = document.querySelector<HTMLElement>('.work-intro');
+if (workIntro) { workIntro.classList.add('reveal-ready'); reveal.observe(workIntro); }
 cards.forEach(card => card.addEventListener('focusin', () => card.classList.add('is-visible')));
+
+document.querySelectorAll<HTMLButtonElement>('[data-project]').forEach(button => {
+  const modal = document.getElementById(`project-${button.dataset.project}`) as HTMLDialogElement;
+  button.addEventListener('click', () => {
+    modal.showModal(); modal.scrollTop = 0;
+    document.body.classList.add('viewer-open');
+  });
+  modal.querySelector('.project-close')!.addEventListener('click', () => modal.close());
+  modal.addEventListener('click', event => { if (event.target === modal) modal.close(); });
+  modal.addEventListener('close', () => document.body.classList.remove('viewer-open'));
+});
 
 const progress = document.querySelector<HTMLElement>('.reading-progress')!;
 let scrollFrame = 0;
