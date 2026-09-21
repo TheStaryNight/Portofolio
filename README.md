@@ -16,7 +16,7 @@ Tidak membutuhkan database, backend, atau environment variable untuk versi saat 
 
 ## Fitur
 
-- Hero dengan karakter penyelam pixel interaktif, tanda tangan asli, partikel, cahaya yang membesar lalu memudar, dan pencahayaan yang mengikuti pointer.
+- Hero dengan karakter penyelam pixel interaktif, logo SC bergelombang, partikel, cahaya yang membesar lalu memudar, dan pencahayaan yang mengikuti pointer.
 - Warna halaman bertransisi dari teal menuju navy gelap.
 - Navigasi kedalaman **Surface → Exploration → Deep dive → The horizon**, indikator bagian aktif, dan progress scroll.
 - Selected Work dengan kontur dasar laut, partikel, serta kumpulan cahaya bergerak.
@@ -94,9 +94,9 @@ src/
   styles/
     diver.css              # Layout hero dan styling pixel diver
     global.css             # Layout dasar, responsivitas, interaksi umum
-    descent.css            # Kedalaman laut, signature, dan efek proyek
+    descent.css            # Kedalaman laut, monogram, dan efek proyek
 public/
-  images/                  # Screenshot, portrait, dan signature
+  images/                  # Screenshot, portrait, dan monogram
   favicon.svg
   Steven-Changcherta-CV.pdf
 assets/
@@ -138,7 +138,7 @@ Angka hasil proyek berasal dari portfolio/CV yang diberikan, bukan benchmark yan
 - Email website: **steven.changcherta@binus.ac.id**. Link `mailto:` membuka aplikasi email pengunjung; tidak mengirim melalui server.
 - Perkiraan kelulusan: **2028**. Tanggal ketersediaan internship belum ditampilkan.
 - Foto asli tetap disimpan di `public/images/portrait.png`; hero sekarang menggunakan karakter SVG pixel diver.
-- Tanda tangan: `public/images/signature.png`, dengan latar transparan dan tampilan terang melalui CSS.
+- Logo: `public/images/sc-monogram.svg`, monogram SC berwarna mint dengan motif arus laut. Favicon memakai desain yang sama.
 - CV: `public/Steven-Changcherta-CV.pdf`. PDF masih dokumen asli; perubahan teks atau email website **tidak otomatis mengubah isi PDF**.
 - Aset yang disajikan ke browser berada di `public/images/`. Mengubah `assets/source/` saja tidak mengubah website.
 
@@ -171,5 +171,5 @@ Adapter server tidak diperlukan untuk konfigurasi statis ini. Tambahkan domain d
 ## Kredit
 
 - Referensi struktur: [Adrian Murphy Portfolio Template — WebDev For You](https://webflow.com/made-in-webflow/website/webdev-for-you-adrian-murphy-template).
-- Konten proyek, screenshot, portrait, tanda tangan, dan CV disediakan oleh Steven Changcherta.
+- Konten proyek, screenshot, portrait, logo personal, dan CV disediakan oleh Steven Changcherta.
 - Animasi laut dan elemen dekoratif dibuat dengan CSS/SVG di repository ini.
