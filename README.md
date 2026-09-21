@@ -1,30 +1,161 @@
 # Steven Changcherta — Portfolio
 
-An Astro and TypeScript portfolio inspired by the [Adrian Murphy Webflow template by WebDev For You](https://webflow.com/made-in-webflow/website/webdev-for-you-adrian-murphy-template), with a deep-sea color palette and Steven's own content and images.
+Portfolio personal mahasiswa Computer Science dengan spesialisasi Artificial Intelligence di BINUS University, menampilkan proyek computer vision, machine learning, dan UI/UX.
 
-## Local development
+Tema **deep sea** membawa pengunjung dari cahaya permukaan menuju laut yang semakin gelap. Struktur awal terinspirasi dari [Adrian Murphy Portfolio Template oleh WebDev For You](https://webflow.com/made-in-webflow/website/webdev-for-you-adrian-murphy-template), dengan implementasi, konten, dan interaksi yang disesuaikan.
+
+## Teknologi
+
+- **Astro 7** untuk menghasilkan website statis.
+- **TypeScript** untuk data proyek dan interaksi browser.
+- **CSS dan SVG** untuk layout responsif dan animasi.
+- **Native HTML dialog** untuk popup proyek dan galeri.
+- **DM Sans dan Manrope** dari Google Fonts, dengan font sistem sebagai fallback.
+
+Tidak membutuhkan database, backend, atau environment variable untuk versi saat ini. Versi dependency dikunci melalui `package-lock.json`.
+
+## Fitur
+
+- Hero dengan portrait, tanda tangan asli, partikel, cahaya yang membesar lalu memudar, dan pencahayaan yang mengikuti pointer.
+- Warna halaman bertransisi dari teal menuju navy gelap.
+- Navigasi kedalaman **Surface → Exploration → Deep dive → The horizon**, indikator bagian aktif, dan progress scroll.
+- Selected Work dengan kontur dasar laut, partikel, serta kumpulan cahaya bergerak.
+- Gambar proyek masuk bergantian dari kiri dan kanan saat di-scroll.
+- Animasi per proyek: pemindaian gambar, tracing landmark tangan, chart, dan bentuk bermain. Semua merupakan dekorasi, bukan inferensi model atau data langsung.
+- Popup proyek dengan peran, highlight, teknologi, kontribusi, tantangan, hasil, dan screenshot.
+- Galeri dengan tombol sebelumnya/berikutnya, tombol panah keyboard, serta `Escape` untuk menutup.
+- Pendidikan, leadership, kontak email, dan unduhan CV.
+- Layout desktop/mobile, skip link, focus indicator, **Pause motion**, dan dukungan `prefers-reduced-motion`.
+- Pemilihan teks biasa dinonaktifkan untuk mengurangi penyalinan kasual; email tetap selectable. Ini **bukan proteksi penuh**: konten publik masih dapat disalin melalui source, screenshot, dan browser tools.
+
+## Menjalankan secara lokal
+
+Prasyarat: **Node.js 22.12.0 atau lebih baru** dan **npm 9.6.5 atau lebih baru**.
+
+Jalankan dari root repository, yaitu folder yang berisi `package.json`:
 
 ```sh
-npm install
+npm ci
 npm run dev
 ```
 
-Open http://127.0.0.1:4321. Validate with `npm run check` and `npm run build`.
+Buka alamat yang ditampilkan terminal, biasanya [http://127.0.0.1:4321](http://127.0.0.1:4321). Gunakan `npm install` saat mengubah dependency dan sertakan perubahan lockfile.
 
-## Editing
+| Perintah | Fungsi |
+| --- | --- |
+| `npm run dev` | Server development |
+| `npm run check` | Pemeriksaan tipe dan diagnostik Astro |
+| `npm run build` | Menghasilkan website statis ke `dist/` |
+| `npm run preview -- --port 4322` | Preview hasil build pada port 4322 |
 
-- `src/data/projects.ts`: project descriptions, links, dates, and gallery assets.
-- `src/pages/index.astro`: introduction, education, contact, and page structure.
-- `src/styles/global.css`: visual design and responsive styles.
-- `public/images`: supplied images used on the website.
-- `public/Steven-Changcherta-CV.pdf`: original supplied CV download.
+Untuk memeriksa production build:
 
-CatatStock and Gesture Controlled Mouse dates are February–June 2026. Expected graduation is 2028; internship availability dates are intentionally omitted. Project results are self-reported from the supplied portfolio/CV. Gesture images are shown without the inconsistent left/right-click captions from the source PDF.
+```sh
+npm run check
+npm run build
+npm run preview -- --port 4322
+```
 
-The supplied CV is unchanged and contains its original education wording. Update that PDF separately if its wording needs to match the website. The portrait is the original low-resolution supplied image; replace it with a higher-resolution PNG using the same filename when available.
+Buka [http://127.0.0.1:4322](http://127.0.0.1:4322). Preview membaca `dist/`; setelah mengubah source, build ulang dan refresh browser.
 
-## Vercel later
+Jika Astro menjalankan server di background, hentikan dengan:
 
-Import this repository into Vercel, choose Astro, build with `npm run build`, and use `dist` as output. No adapter is required for this static site. If importing a parent directory instead of this repository, set the root to the folder containing `package.json`. Nothing has been deployed.
+```sh
+npx astro dev stop
+npx astro preview stop
+```
 
-Fonts load from Google Fonts with local system fallbacks. Images and the CV are served locally. Email contact opens the visitor's email application; no form service is required.
+## Struktur repository
+
+```text
+src/
+  components/
+    ProjectMotion.astro    # Animasi dekoratif per proyek
+    WorkBackdrop.astro     # Kontur, partikel, dan cahaya Selected Work
+  data/
+    projects.ts            # Konten, highlight, teknologi, link, dan galeri
+  pages/
+    index.astro            # Halaman utama, metadata, navigasi, dan popup
+  scripts/
+    interactions.ts        # Motion, scroll reveal, depth navigation, dialog
+  styles/
+    global.css             # Layout dasar, responsivitas, interaksi umum
+    descent.css            # Kedalaman laut, signature, dan efek proyek
+public/
+  images/                  # Screenshot, portrait, dan signature
+  favicon.svg
+  Steven-Changcherta-CV.pdf
+assets/
+  source/                  # Salinan aset sumber awal
+astro.config.mjs
+package.json
+package-lock.json
+tsconfig.json
+```
+
+`node_modules/`, `dist/`, `.astro/`, `.vercel/`, dan file environment lokal diabaikan oleh Git.
+
+## Mengubah konten
+
+### Proyek
+
+Edit `src/data/projects.ts`:
+
+- Identitas: `id`, `number`, `name`, `title`, `category`, `date`.
+- Isi: `description`, `role`, `contribution`, `challenge`, `outcome`.
+- Highlight: `metric`, `metricLabel`, `metricNote`.
+- Teknologi dan tautan: `tags`, `link`, `linkLabel`.
+- Gambar: `image`, `alt`, `gallery`; nama file merujuk ke `public/images/`.
+
+Gunakan `id` unik. Untuk animasi proyek baru, tambahkan variasi di `ProjectMotion.astro` dan styling di `descent.css`.
+
+| Proyek | Periode | Fokus |
+| --- | --- | --- |
+| Fruit Ripeness Classification | September–Desember 2025 | PyTorch, ResNet18, Streamlit |
+| Gesture Controlled Mouse | Februari–Juni 2026 | MediaPipe, klasifikasi gesture, interaksi real-time |
+| CatatStock | Februari–Juni 2026 | UI/UX dan frontend React untuk inventory dashboard |
+| PlayNest | 2024 | User research dan prototyping Figma |
+
+Angka hasil proyek berasal dari portfolio/CV yang diberikan, bukan benchmark yang diverifikasi independen. Pertahankan konteks evaluasi saat mengubah highlight.
+
+### Profil dan aset
+
+- Bio, pendidikan, leadership, metadata, dan kontak: `src/pages/index.astro`.
+- Email website: **steven.changcherta@binus.ac.id**. Link `mailto:` membuka aplikasi email pengunjung; tidak mengirim melalui server.
+- Perkiraan kelulusan: **2028**. Tanggal ketersediaan internship belum ditampilkan.
+- Foto: `public/images/portrait.png`. Saat ini menggunakan resolusi asli yang diberikan.
+- Tanda tangan: `public/images/signature.png`, dengan latar transparan dan tampilan terang melalui CSS.
+- CV: `public/Steven-Changcherta-CV.pdf`. PDF masih dokumen asli; perubahan teks atau email website **tidak otomatis mengubah isi PDF**.
+- Aset yang disajikan ke browser berada di `public/images/`. Mengubah `assets/source/` saja tidak mengubah website.
+
+### Desain dan animasi
+
+Edit layout dasar di `global.css`, dan tema kedalaman serta Selected Work di `descent.css`. Pertahankan kontrol Pause motion, preferensi reduced motion, navigasi keyboard, dan layout mobile ketika menambah animasi. Interaksi pointer hanya aktif pada perangkat dengan pointer presisi.
+
+## Pemeriksaan sebelum publish
+
+```sh
+npm run check
+npm run build
+```
+
+Periksa desktop dan mobile: navigasi section, popup, galeri, penutupan dengan `Escape`, Pause motion, email, dan unduhan CV. Pastikan konten tetap terbaca tanpa overflow horizontal.
+
+## Deployment ke Vercel
+
+Website menghasilkan output statis:
+
+1. Import repository GitHub ke Vercel.
+2. Pilih preset **Astro**.
+3. Root directory harus menunjuk ke folder yang berisi `package.json`.
+4. Build command: `npm run build`.
+5. Output directory: `dist`.
+6. Gunakan versi Node.js yang kompatibel dengan requirement di atas.
+
+Adapter server tidak diperlukan untuk konfigurasi statis ini. Tambahkan domain dan metadata URL produksi setelah alamat deployment ditentukan.
+
+## Kredit
+
+- Referensi struktur: [Adrian Murphy Portfolio Template — WebDev For You](https://webflow.com/made-in-webflow/website/webdev-for-you-adrian-murphy-template).
+- Konten proyek, screenshot, portrait, tanda tangan, dan CV disediakan oleh Steven Changcherta.
+- Animasi laut dan elemen dekoratif dibuat dengan CSS/SVG di repository ini.
