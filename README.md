@@ -1,6 +1,6 @@
 # Steven Changcherta — Portfolio
 
-Portfolio personal mahasiswa Computer Science dengan spesialisasi Artificial Intelligence di BINUS University, menampilkan proyek computer vision, machine learning, dan UI/UX.
+Portfolio personal mahasiswa Computer Science dengan spesialisasi Artificial Intelligence di BINUS University, menampilkan proyek computer vision, machine learning, pengembangan software, dan UI/UX. Target role: **AI Engineer** atau **Software Engineer**, untuk internship berdurasi **satu tahun**.
 
 Tema **deep sea** membawa pengunjung dari cahaya permukaan menuju laut yang semakin gelap. Struktur awal terinspirasi dari [Adrian Murphy Portfolio Template oleh WebDev For You](https://webflow.com/made-in-webflow/website/webdev-for-you-adrian-murphy-template), dengan implementasi, konten, dan interaksi yang disesuaikan.
 
@@ -80,15 +80,19 @@ npx astro preview stop
 ```text
 src/
   components/
+    PixelDiver.astro       # Karakter pixel dan panel pertanyaan preset
     ProjectMotion.astro    # Animasi dekoratif per proyek
     WorkBackdrop.astro     # Kontur, partikel, dan cahaya Selected Work
   data/
+    diver.ts               # Pertanyaan, jawaban, dan tautan pixel diver
     projects.ts            # Konten, highlight, teknologi, link, dan galeri
   pages/
     index.astro            # Halaman utama, metadata, navigasi, dan popup
   scripts/
+    diver.ts               # Animasi mengetik, skip, reset, reduced motion
     interactions.ts        # Motion, scroll reveal, depth navigation, dialog
   styles/
+    diver.css              # Layout hero dan styling pixel diver
     global.css             # Layout dasar, responsivitas, interaksi umum
     descent.css            # Kedalaman laut, signature, dan efek proyek
 public/
