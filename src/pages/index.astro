@@ -3,6 +3,8 @@ import '../styles/global.css';
 import '../styles/descent.css';
 import ProjectMotion from '../components/ProjectMotion.astro';
 import WorkBackdrop from '../components/WorkBackdrop.astro';
+import PixelDiver from '../components/PixelDiver.astro';
+import '../styles/diver.css';
 import { projects } from '../data/projects';
 ---
 <!doctype html>
@@ -39,14 +41,8 @@ import { projects } from '../data/projects';
           <div class="intro"><span class="intro-line" aria-hidden="true"></span><p>I’m <strong>Steven Changcherta.</strong><br/>A Computer Science student turning curiosity into<br class="desktop-break"/> computer vision, intelligent systems, and thoughtful design.</p></div>
           <a class="button" href="#work">Dive into my work <span>↓</span></a>
         </div>
-        <div class="portrait-scene">
-          <div class="orbit orbit-one" aria-hidden="true"></div><div class="orbit orbit-two" aria-hidden="true"></div>
-          <span class="cross cross-one" aria-hidden="true">+</span><span class="cross cross-two" aria-hidden="true">+</span>
-          <div class="portrait-frame"><img src="/images/portrait.png" alt="Steven Changcherta" width="316" height="307" fetchpriority="high" /><div class="portrait-shade"></div></div>
-          <span class="portrait-coordinate">01° / A DIFFERENT PERSPECTIVE</span>
-          <div class="portrait-caption"><span class="signal"></span><span>STEVEN CHANGCHERTA<small>Student. Builder. Always learning.</small></span></div>
-        </div>
-        <div class="hero-signature"><img src="/images/signature.png" width="640" height="300" alt="Steven Changcherta’s signature" /><span>A PERSONAL EXPLORATION</span></div><div class="hero-bottom"><button class="motion-toggle" type="button" aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span></button><span class="hero-bottom-center">AI / VISION / HUMAN EXPERIENCE</span><a href="#work">SCROLL TO EXPLORE <span>↓</span></a></div>
+        <PixelDiver />
+        <div class="hero-bottom"><button class="motion-toggle" type="button" aria-pressed="false">Pause motion <span aria-hidden="true">Ⅱ</span></button><span class="hero-bottom-center">AI / VISION / HUMAN EXPERIENCE</span><a href="#work">SCROLL TO EXPLORE <span>↓</span></a></div>
       </section>
       <section id="work" class="work section-wrap" aria-labelledby="work-title">
         <WorkBackdrop />

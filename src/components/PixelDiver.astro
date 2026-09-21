@@ -1,0 +1,48 @@
+---
+import { diverQuestions } from '../data/diver';
+---
+<section class="diver-chat" aria-labelledby="diver-heading">
+  <div class="diver-topline"><span><i></i> STEVEN / PIXEL EDITION</span><span>01 PLAYER</span></div>
+  <div class="diver-stage">
+    <div class="diver-sonar" aria-hidden="true"></div><span class="pixel-bubble bubble-a" aria-hidden="true"></span><span class="pixel-bubble bubble-b" aria-hidden="true"></span><span class="pixel-bubble bubble-c" aria-hidden="true"></span>
+    <button class="diver-character" type="button" aria-label="Say hello to pixel Steven" disabled>
+      <svg viewBox="0 0 64 76" role="img" aria-label="Pixel-art Steven in a teal diving suit, with dark hair and glasses" shape-rendering="crispEdges">
+        <g class="diver-flippers" fill="#90d5bc" stroke="#081d2b" stroke-width="2"><path d="M21 59h9v10h-5v4H12v-5h9z"/><path d="M35 59h9v9h9v5H40v-4h-5z"/></g>
+        <path fill="#062331" d="M14 30h7v26h-7zM44 30h7v26h-7z"/><path fill="#407e88" d="M15 33h5v18h-5zM45 33h5v18h-5z"/>
+        <path fill="#082637" d="M21 37h23v28H21z"/><path fill="#258b91" d="M23 39h19v23H23z"/><path fill="#61c4b3" d="M24 41h5v18h-5z"/><path fill="#145269" d="M35 40h7v22h-7z"/>
+        <path fill="#b8efd2" d="M23 47h19v4H23z"/><path fill="#062331" d="M29 47h7v5h-7z"/><path fill="#c0f1d9" d="M31 48h3v2h-3z"/>
+        <g class="diver-arm-left"><path fill="#0a3545" d="M21 39h-6v5h-5v13h7v-9h5z"/><path fill="#54aea4" d="M16 41h4v5h-4zM12 46h4v8h-4z"/><path fill="#efc4a1" d="M10 54h7v6h-7z"/></g>
+        <g class="diver-arm-right"><path fill="#0a3545" d="M43 39h7v6h5v12h-7v-9h-5z"/><path fill="#54aea4" d="M45 41h4v5h-4zM49 46h4v8h-4z"/><path fill="#efc4a1" d="M48 54h7v6h-7z"/></g>
+        <path fill="#072534" d="M20 7h24v4h5v22h-5v7H20v-7h-5V11h5z"/>
+        <path fill="#478b96" d="M20 10h24v3h3v18h-4v6H21v-6h-4V13h3z"/>
+        <path fill="#efc4a1" d="M22 14h20v4h3v12h-4v5H23v-5h-4V18h3z"/>
+        <path fill="#172d3c" d="M22 10h20v3h3v8h-4v-5h-6v-2H25v5h-5v-6h2z"/>
+        <path fill="#bc8e73" d="M22 29h4v4h13v-3h3v5H23z"/>
+        <g fill="none" stroke="#112e40" stroke-width="2"><path d="M20 21h10v7H20zM34 21h10v7H34zM30 23h4"/></g>
+        <g class="diver-eyes" fill="#092536"><path d="M25 23h2v3h-2zM37 23h2v3h-2z"/></g>
+        <path class="diver-mouth" fill="#985f51" d="M29 31h7v2h-7z"/>
+        <path fill="#9ae0d4" d="M16 14h2v13h-2zM46 14h2v8h-2z"/>
+        <path fill="#65aba9" d="M48 11h5v19h-6v-4h3V14h-2z"/>
+        <path fill="#c1f1d8" d="M50 8h5v5h-5z"/>
+      </svg>
+    </button>
+    <div class="diver-stage-caption"><h2 id="diver-heading">A little me.<br/><em>A few answers.</em></h2><span>CLICK TO SAY HELLO ↑</span></div>
+  </div>
+  <div class="diver-dialogue">
+    <div class="bubble-heading"><span class="diver-speaker">STEVEN SAYS</span><button type="button" class="diver-skip" hidden>Skip typing ↗</button></div>
+    <p class="diver-visible-answer" aria-hidden="true">Hey, I’m Steven! Welcome aboard. Pick a question below and I’ll show you around.</p>
+    <p class="sr-only diver-announcement" role="status" aria-live="polite" aria-atomic="true">Hey, I’m Steven! Welcome aboard. Pick a question below and I’ll show you around.</p>
+    <div class="diver-answer-links">
+      {diverQuestions.map(q => <div data-answer-links={q.id} hidden>{q.links.map(link => 'project' in link ? <button type="button" data-project={link.project} aria-haspopup="dialog">{link.label}</button> : <a href={link.href} download={'download' in link && link.download}>{link.label}</a>)}</div>)}
+    </div>
+  </div>
+  <p class="diver-question-label">WHAT WOULD YOU LIKE TO KNOW?</p>
+  <div class="diver-questions" role="group" aria-label="Questions about Steven">
+    {diverQuestions.map(q => <button type="button" data-question={q.id} aria-pressed="false" disabled>{q.label}<span aria-hidden="true">↗</span></button>)}
+  </div>
+  <div class="diver-chat-footer"><span>PRESET ANSWERS · NO AI GENERATED REPLIES</span><button type="button" class="diver-reset" disabled>Start over ↺</button></div>
+  <noscript><p class="diver-noscript">Enable JavaScript to chat with the diver. You can still explore all projects and contact details below.</p></noscript>
+</section>
+<script>
+  import '../scripts/diver';
+</script>

@@ -16,7 +16,7 @@ Tidak membutuhkan database, backend, atau environment variable untuk versi saat 
 
 ## Fitur
 
-- Hero dengan portrait, tanda tangan asli, partikel, cahaya yang membesar lalu memudar, dan pencahayaan yang mengikuti pointer.
+- Hero dengan karakter penyelam pixel interaktif, tanda tangan asli, partikel, cahaya yang membesar lalu memudar, dan pencahayaan yang mengikuti pointer.
 - Warna halaman bertransisi dari teal menuju navy gelap.
 - Navigasi kedalaman **Surface → Exploration → Deep dive → The horizon**, indikator bagian aktif, dan progress scroll.
 - Selected Work dengan kontur dasar laut, partikel, serta kumpulan cahaya bergerak.
@@ -27,6 +27,16 @@ Tidak membutuhkan database, backend, atau environment variable untuk versi saat 
 - Pendidikan, leadership, kontak email, dan unduhan CV.
 - Layout desktop/mobile, skip link, focus indicator, **Pause motion**, dan dukungan `prefers-reduced-motion`.
 - Pemilihan teks biasa dinonaktifkan untuk mengurangi penyalinan kasual; email tetap selectable. Ini **bukan proteksi penuh**: konten publik masih dapat disalin melalui source, screenshot, dan browser tools.
+
+## Pixel diver
+
+Karakter pada hero menjawab enam pertanyaan preset melalui speech bubble dengan animasi mengetik. Pengunjung dapat melewati animasi, memilih pertanyaan lain, membuka popup proyek, mengakses kontak/CV, atau memulai ulang. Ini bukan chatbot AI: tidak ada API, model, mikrofon, audio, atau riwayat percakapan yang disimpan.
+
+- Edit pertanyaan, jawaban, dan tautan di `src/data/diver.ts`.
+- Karakter SVG dan markup chat berada di `src/components/PixelDiver.astro`.
+- Logika typing, skip, reset, dan reduced motion berada di `src/scripts/diver.ts`.
+- Styling berada di `src/styles/diver.css`.
+- Tanpa JavaScript, pengunjung tetap dapat membaca intro dan seluruh portfolio; panel chat menampilkan penjelasan singkat.
 
 ## Menjalankan secara lokal
 
@@ -123,7 +133,7 @@ Angka hasil proyek berasal dari portfolio/CV yang diberikan, bukan benchmark yan
 - Bio, pendidikan, leadership, metadata, dan kontak: `src/pages/index.astro`.
 - Email website: **steven.changcherta@binus.ac.id**. Link `mailto:` membuka aplikasi email pengunjung; tidak mengirim melalui server.
 - Perkiraan kelulusan: **2028**. Tanggal ketersediaan internship belum ditampilkan.
-- Foto: `public/images/portrait.png`. Saat ini menggunakan resolusi asli yang diberikan.
+- Foto asli tetap disimpan di `public/images/portrait.png`; hero sekarang menggunakan karakter SVG pixel diver.
 - Tanda tangan: `public/images/signature.png`, dengan latar transparan dan tampilan terang melalui CSS.
 - CV: `public/Steven-Changcherta-CV.pdf`. PDF masih dokumen asli; perubahan teks atau email website **tidak otomatis mengubah isi PDF**.
 - Aset yang disajikan ke browser berada di `public/images/`. Mengubah `assets/source/` saja tidak mengubah website.
