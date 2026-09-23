@@ -138,7 +138,7 @@ Angka hasil proyek berasal dari portfolio/CV yang diberikan, bukan benchmark yan
 - Email website: **steven.changcherta@binus.ac.id**. Link `mailto:` membuka aplikasi email pengunjung; tidak mengirim melalui server.
 - Perkiraan kelulusan: **2028**. Tanggal ketersediaan internship belum ditampilkan.
 - Foto asli tetap disimpan di `public/images/portrait.png`; hero sekarang menggunakan karakter SVG pixel diver.
-- Logo: `public/images/sc-monogram.svg`, monogram SC berwarna mint dengan motif arus laut. Favicon memakai desain yang sama.
+- Logo: `public/images/sc-ocean-logo.png`, monogram SC berwarna mint dengan motif arus laut, dibuat menggunakan image generation. Favicon memakai desain yang sama.
 - CV: `public/Steven-Changcherta-CV.pdf`. PDF masih dokumen asli; perubahan teks atau email website **tidak otomatis mengubah isi PDF**.
 - Aset yang disajikan ke browser berada di `public/images/`. Mengubah `assets/source/` saja tidak mengubah website.
 
