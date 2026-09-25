@@ -173,3 +173,7 @@ Adapter server tidak diperlukan untuk konfigurasi statis ini. Tambahkan domain d
 - Referensi struktur: [Adrian Murphy Portfolio Template — WebDev For You](https://webflow.com/made-in-webflow/website/webdev-for-you-adrian-murphy-template).
 - Konten proyek, screenshot, portrait, logo personal, dan CV disediakan oleh Steven Changcherta.
 - Animasi laut dan elemen dekoratif dibuat dengan CSS/SVG di repository ini.
+
+## Live demos
+
+Tiga proyek memiliki tombol **Try live demo** pada kartu dan popup: Fruit Classification, Gesture Mouse, dan CatatStock. Semua berjalan di browser dan ikut deployment portfolio. PlayNest tidak diubah. CatatStock menggunakan data contoh yang dapat direset; forecasting AI belum terhubung. Detail build, model, dan batasan ada di [demos/README.md](demos/README.md).

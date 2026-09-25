@@ -5,3 +5,7 @@ dist/
 .env.*
 !.env.example
 .vercel/
+
+public/demos/runtime/
+public/demos/vision/
+public/demos/catatstock/

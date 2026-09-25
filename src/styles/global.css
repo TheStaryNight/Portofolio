@@ -39,3 +39,5 @@ body{-webkit-user-select:none;user-select:none}
 .motion-paused .work-intro{opacity:1!important;transform:none!important}.motion-paused *::before{animation-play-state:paused!important}
 @media(max-width:760px){.modal-toolbar{padding:12px 18px}.modal-body{padding:25px 22px}.modal-body h2{letter-spacing:-1.5px}.modal-description{font-size:13px}.project-modal{max-height:92svh}.project-close{width:38px;height:38px}}
 @media(prefers-reduced-motion:reduce){.work-intro.reveal-ready{opacity:1;transform:none}.project-visual::after{display:none}}
+
+.project-actions{display:flex;flex-wrap:wrap;align-items:center;gap:20px}.project-modal .button{margin:0 12px 12px 0}

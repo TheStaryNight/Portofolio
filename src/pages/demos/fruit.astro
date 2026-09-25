@@ -1,0 +1,7 @@
+---
+import Demo from '../../layouts/Demo.astro';
+---
+<Demo title="Fruit ripeness classifier" description="Try the project's trained ResNet18 model on your own fruit photo.">
+<div class="grid"><section class="panel"><h2>1. Choose a photo</h2><p>Works best with a clear photo of an apple, banana, or orange. Images stay in this browser.</p><label for="photo">JPEG, PNG, or WebP · maximum 10 MB</label><p><input id="photo" type="file" accept="image/jpeg,image/png,image/webp"/></p><img id="preview" alt="Selected fruit photo" hidden/><button id="classify" disabled>Classify photo</button><p id="status" role="status">Choose a photo to begin. The model downloads on your first prediction (about 45 MB).</p></section><section class="panel"><h2>2. Explore the prediction</h2><p id="result" aria-live="polite">Waiting for a photo</p><div id="scores"></div><p>This is a student project trained on fruit images. Confidence describes the model's output, not a guarantee of correctness. It can confidently misclassify unrelated images.</p><small>Do not use this demo to decide whether food is safe to eat.</small><p><a href="https://github.com/TheStaryNight/Fruit_Clasification" target="_blank" rel="noopener noreferrer">View original project ↗</a></p></section></div>
+<script>import '../../scripts/fruit-demo';</script>
+</Demo>
