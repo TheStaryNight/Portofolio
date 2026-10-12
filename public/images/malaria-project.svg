@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="640" viewBox="0 0 1100 640">
+  <defs><radialGradient id="bg"><stop stop-color="#174b54"/><stop offset="1" stop-color="#071f2c"/></radialGradient></defs>
+  <rect width="1100" height="640" fill="url(#bg)"/>
+  <g fill="none" stroke="#8ad8c3" opacity=".1"><path d="M0 160H1100M0 320H1100M0 480H1100M220 0V640M440 0V640M660 0V640M880 0V640"/></g>
+  <g font-family="Arial, sans-serif">
+    <text x="64" y="76" fill="#a6dece" font-size="17" letter-spacing="3">MALARIA / MACHINE LEARNING</text>
+    <text x="64" y="155" fill="#f1f7f4" font-size="48" font-weight="700">Understanding the data.</text>
+    <text x="64" y="211" fill="#f1f7f4" font-size="48" font-weight="700">Before prediction.</text>
+    <rect x="64" y="252" width="294" height="46" rx="23" fill="#b8e4cc"/>
+    <text x="85" y="282" fill="#0a3034" font-size="18" font-weight="700">MY ROLE · EDA CONTRIBUTOR</text>
+    <g fill="#0c2b37" stroke="#477c7d"><rect x="64" y="351" width="295" height="161" rx="12"/><rect x="403" y="351" width="295" height="161" rx="12"/><rect x="742" y="351" width="294" height="161" rx="12"/></g>
+    <g fill="#b8e4cc" font-size="15" letter-spacing="2"><text x="87" y="383">EXPLORE</text><text x="426" y="383">PROJECT FEATURES</text><text x="765" y="383">TEAM APPLICATION</text></g>
+    <g fill="#f1f7f4" font-size="29" font-weight="700"><text x="87" y="431">Cell image data</text><text x="426" y="431">84 features</text><text x="765" y="431">Classification</text></g>
+    <g fill="#a9c0c2" font-size="17"><text x="87" y="470">Exploratory data analysis</text><text x="426" y="470">Color, texture, shape</text><text x="765" y="470">SVM · RF · XGBoost</text></g>
+    <text x="64" y="585" fill="#8bafaf" font-size="15" letter-spacing="2">PROJECT OVERVIEW</text>
+    <text x="1036" y="585" text-anchor="end" fill="#b8e4cc" font-size="16">Explore the live demo ↗</text>
+  </g>
+</svg>

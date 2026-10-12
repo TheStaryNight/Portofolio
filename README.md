@@ -176,4 +176,6 @@ Adapter server tidak diperlukan untuk konfigurasi statis ini. Tambahkan domain d
 
 ## Live demos
 
+Malaria Cell Image Classification ditampilkan sebagai proyek EDA, dengan kontribusi Steven sebagai **EDA Contributor**. Tombol demo membuka [aplikasi malaria](https://machinelearningmalaria.netlify.app/), dan kode tim tersedia di [MachineLearningApps](https://github.com/Zircx/MachineLearningApps). Visual kartu merupakan ringkasan proyek, bukan grafik hasil EDA. Detail analisis dan tanggal proyek dapat ditambahkan setelah dikonfirmasi.
+
 Tiga proyek memiliki tombol **Try live demo** pada kartu dan popup: Fruit Classification, Gesture Mouse, dan CatatStock. Semua berjalan di browser dan ikut deployment portfolio. PlayNest tidak diubah. CatatStock menggunakan data contoh yang dapat direset; forecasting AI belum terhubung. Detail build, model, dan batasan ada di [demos/README.md](demos/README.md).
